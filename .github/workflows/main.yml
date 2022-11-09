@@ -17,7 +17,7 @@ jobs:
           echo "$SSH_KEY" > ~/.ssh/pi.key
           chmod 600 ~/.ssh/pi.key
           
-          ssh pi@ssh.joewill.co.uk -o ProxyCommand='~/cloudflared access ssh --service-token-id 0ea2af1051e4535b8f0a61257ec23135.access --service-token-secret c82dbc74b4c5d67d4e3bfda32030 --hostname %h' -i ~/.ssh/pi.key 
+          sudo ssh pi@ssh.joewill.co.uk -o ProxyCommand='sudo ~/cloudflared access ssh --service-token-id 0ea2af1051e4535b8f0a61257ec23135.access --service-token-secret c82dbc74b4c5d67d4e3bfda32030 --hostname %h' -i ~/.ssh/pi.key 
           ls
           exit
           
