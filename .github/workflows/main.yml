@@ -28,7 +28,9 @@ jobs:
             ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
           END
           
-          ls
+          ssh deploy 'rm -rfv /home/pi/pipeline_test && mkdir /home/pi/pipeline_test'
+          
+          scp ./public/ deploy:/home/pi/pipeline_test/
           
         env:
           SSH_USER: ${{ secrets.PROD_SSH_USER }}
