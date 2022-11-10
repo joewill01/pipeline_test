@@ -28,7 +28,8 @@ jobs:
             ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
           END
           
-          ssh deploy 'mkdir fromGitHub' 
+          ls
+          
         env:
           SSH_USER: ${{ secrets.PROD_SSH_USER }}
           SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
