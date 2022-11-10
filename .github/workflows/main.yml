@@ -30,7 +30,7 @@ jobs:
           
           ssh deploy 'rm -rfv /home/pi/pipeline_test && mkdir /home/pi/pipeline_test'
           
-          scp -r ./public/ deploy:/home/pi/pipeline_test/
+          scp -r ./public/. deploy:/home/pi/pipeline_test/
           
         env:
           SSH_USER: ${{ secrets.PROD_SSH_USER }}
